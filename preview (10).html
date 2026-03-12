@@ -1,0 +1,27 @@
+<script>
+function addRecommendation(){
+
+let name = document.getElementById("recName").value;
+let text = document.getElementById("recText").value;
+
+if(name === "" || text === ""){
+alert("Please fill all fields");
+return;
+}
+
+let container = document.querySelector(".recommendations-container");
+
+let newCard = document.createElement("div");
+newCard.className = "recommendation-card";
+
+newCard.innerHTML = `<p>"${text}"</p><strong>- ${name}</strong>`;
+
+container.appendChild(newCard);
+
+/* Popup confirmation */
+alert("Thank you for leaving a recommendation!");
+
+document.getElementById("recName").value="";
+document.getElementById("recText").value="";
+}
+</script>
